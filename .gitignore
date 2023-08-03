@@ -1,0 +1,6 @@
+# parse args
+__pycache__
+
+# crawled file
+link/
+html/
