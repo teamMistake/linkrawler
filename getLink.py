@@ -37,9 +37,9 @@ def getLinkByKeyword(keyword, pages):
     with open(link_path, 'w', encoding='utf-8') as file:
         json.dump(result, file, ensure_ascii=False, indent=2)
 
-    return link_path, keyword
-
     driver.close()
+
+    return link_path
 
 def getLinkByCategory(category, pages):
     driver = webdriver.Chrome(options=options)
@@ -67,9 +67,9 @@ def getLinkByCategory(category, pages):
     with open(link_path, 'w', encoding='utf-8') as file:
         json.dump(result, file, ensure_ascii=False, indent=2)
 
-    return link_path, category
-
     driver.close()
+
+    return link_path
 
 if __name__ == "__main__":
     getLinkByCategory(1, 5)

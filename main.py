@@ -15,9 +15,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if(args.mode == "category"):
-        link_name, category = getLinkByCategory(args.category, args.pages)
-        getHtml(link_name, category, args.path)
+        link_name = getLinkByCategory(args.category, args.pages)
+        getHtml(link_name, args.category, args.path)
     elif(args.mode == "keyword"):
-        link_name, keyword = getLinkByKeyword(args.keyword, args.pages)
-        getHtml(link_name, keyword, args.path)
+        link_name = getLinkByKeyword(args.keyword, args.pages)
+        getHtml(link_name, args.keyword, args.path)
     else: print("*** Alert: mode not selected. ***")
