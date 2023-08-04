@@ -6,7 +6,7 @@ from random import randrange
 from datetime import datetime
 from time import sleep
 
-from config import category_dict, KEYWORD_XPATH, CATEGORY_XPATH
+from config import CATEGORY_DICT, KEYWORD_XPATH, CATEGORY_XPATH
 
 options = webdriver.ChromeOptions()
 options.add_argument('window-size=1920,1080')
@@ -30,7 +30,7 @@ def getLinkByKeyword(keyword, pages):
                     "link": q.get_attribute("href")
                 }
             )
-        sleep(0.3 + randrange(2, 8)/10)
+        sleep(0.3 + randrange(2, 8) / 10)
 
     link_path = "./link/keyword_link/" + datetime.today().strftime("%y%m%d.%H%M%S.") + keyword + "link.json"
 
@@ -48,7 +48,7 @@ def getLinkByCategory(category, pages):
     result = []
 
     for page in range(pages):
-        driver.get(url="https://kin.naver.com/qna/kinupList.naver?dirId=" + str(category_dict[category]) + "&page=" + str(page + 1))
+        driver.get(url="https://kin.naver.com/qna/kinupList.naver?dirId=" + str(CATEGORY_DICT[category]) + "&page=" + str(page + 1))
 
         q_list = driver.find_elements(By.XPATH, CATEGORY_XPATH)
 

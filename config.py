@@ -1,7 +1,7 @@
 KEYWORD_XPATH = '//*[@id="s_content"]/div[3]/ul/li[*]/dl/dt/a'
 CATEGORY_XPATH = '//*[@id="au_board_list"]/tr[*]/td[1]/a'
 
-category_dict = {
+CATEGORY_DICT = {
     "edu": 11,
     "tech": 1,
     "game": 2,
