@@ -20,4 +20,5 @@ if __name__ == "__main__":
     elif(args.mode == "keyword"):
         link_name = getLinkByKeyword(args.keyword, args.pages)
         getHtml(link_name, args.keyword, args.path)
-    else: print("*** Alert: mode not selected. ***")
+    else:
+        print("*** Alert: mode not selected. ***")
